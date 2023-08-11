@@ -12,7 +12,7 @@ const ThemeContext = createContext({});
 const ThemeProvider = ({ children }) => {
   //localstorage 저장은 원페이지의 경우 안해도 상관없지만 페이지 더 생길 경우 대비해 추가
   //선택한 상태로 새로고침시 유지하고싶으면 useState 초기값을 localTheme 로 설정
-  const LocalTheme = window.localStorage.getItem('theme') || 'light';
+  //const LocalTheme = window.localStorage.getItem('theme') || 'light';
   const [themeMode, setThemeMode] = useState('light');
   const themeObject = themeMode === 'light'? lightTheme : darkTheme
 
@@ -43,6 +43,7 @@ export function useTheme(){
       setThemeMode('light');
       window.localStorage.setItem('theme','light');
     }
+    // eslint-disable-next-line
   },[themeMode]);
   return [themeMode,toggleTheme];
 };

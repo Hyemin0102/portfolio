@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
 
 import { Pagination,EffectFade,Autoplay} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +15,7 @@ const MokupSlider = ({item}) => {
   //이 때 필터를 사용하면 새로운 배열로 저장하므로 값이 아니라 배열이 저장됨
   //그렇게 되면 findmokupImg[0] 을 map 으로 돌려야함
   const mokupImgArr = project.projects.map((aa) => aa.detailMokupImg); 
-  const findmokupImg = mokupImgArr.find((value,index)=> item.id == index +1); //array 1개,
+  const findmokupImg = mokupImgArr.find((value,index)=> item.id === index +1); //array 1개,
 
 
   //const [currentIndex, setCurrentIndex] = useState(0)

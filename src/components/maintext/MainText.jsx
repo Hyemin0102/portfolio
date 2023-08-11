@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 //import classes from "./MainText.module.css";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import {  useTheme } from '../../context/ThemeProvider';

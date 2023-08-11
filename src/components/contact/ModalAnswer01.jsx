@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion,useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ModalAnswer01 = ({variants,controls,bubble}) => {
 

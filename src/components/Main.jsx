@@ -34,6 +34,7 @@ const Main = () => {
       };
     });
     setSection(updateSection);
+    // eslint-disable-next-line
   },[]);//section 
 
 //스크롤 시 스크롤하고있는 영역 item의 offsetY 랑 비교해서 가져와서 scrollId 할당
@@ -41,7 +42,7 @@ const Main = () => {
     () => { 
       const scrollTop = document.documentElement.scrollTop;
       let scrollId = null;
-      if(scrollTop==0){
+      if(scrollTop === 0){
         setScrollId(null);
         return;
       }
@@ -51,11 +52,13 @@ const Main = () => {
         }
     });
     setScrollId(scrollId);
+    // eslint-disable-next-line
   },[scrollId]) //scrollId
 
 useEffect(() => {
   setOffsetY();
   handleSetScrollId(); // 초기 스크롤 ID 설정
+  // eslint-disable-next-line
 }, [handleSetScrollId]);
 
 

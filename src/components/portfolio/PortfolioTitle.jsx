@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 //import classes from "./PortfolioTitle.module.css";
-import project from './project.json';
 
 const PortfolioTitle = ({selectedCategory,scrollTosect}) => {
   //selsectedCategory 가져와서 조건문으로 클라스 지정

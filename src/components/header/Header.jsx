@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ModalBox from '../contact/ModalBox';
 import { motion ,AnimatePresence  } from 'framer-motion';
 import { useTheme } from '../../context/ThemeProvider';
-import { toHaveErrorMessage } from '@testing-library/jest-dom/matchers';
 import { HiOutlineLightBulb } from "react-icons/hi";
 
 const Header = ({scrollId,section}) => {
