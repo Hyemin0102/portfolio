@@ -1,0 +1,267 @@
+.contact_wrap{
+  background-color: #212426;
+  padding: 100px 0;
+  
+  .contact_inner{
+    * {color: #fff;}
+    font-family: 'pretendard-Regular';
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 1340px;
+    color: #fff;
+    border-top: 1px solid rgba(236, 236, 236, 0.4);
+    text-align: center;
+    @include mobile{display: block;}
+    >*{flex: 1; padding: 0 20px;}
+    ul{
+      > li{
+        padding: 8px 0;
+        &:first-child{
+          font-size: 1.2rem;
+          padding-bottom: 16px;
+          color: #fff;
+        }
+      >a {text-decoration: none; color: #ada8a8;
+        display: inline-block;
+        padding: 0 8px;
+        &:hover{
+          &::after{width: 50%;}
+          &::before{width: 50%;}
+        }
+        position: relative;
+        &::after{
+          position: absolute;
+          content: "";
+          left: 50%;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          background-color: #fff;
+          transition: all 0.5s;
+        }
+        &::before{
+          position: absolute;
+          content: "";
+          right: 50%;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          background-color: #fff;
+          transition: all 0.5s;
+        }
+        
+      }
+      }
+    }
+    .footer_left{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right:1px solid rgba(236, 236, 236, 0.4);
+      padding: 50px 0;
+      @include mobile{border-right:none;}
+      .repeat_btn{
+        background-color: rgba(173, 168, 168, 0.2);
+        line-height: 50px;
+        width: 250px;
+        border-radius: 999px;
+        text-align: center;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 rgba(255,255,255,0.5);
+      }
+      .repeat_copy{
+        font-size: 0.8rem;
+        color:#ada8a8;
+        @include mobile{display: none;}
+      }
+    }
+
+    .footer_right{
+      display: flex;
+      padding: 50px 0;
+      .footer_contact{
+        flex: 1;
+        .footer_chat{
+          flex: 1;
+          position: relative;
+          display: inline-block;
+          color: $main-green; font-size: 1.2rem; cursor: pointer;
+          &:hover{
+            &::after{width: 50%;}
+            &::before{width: 50%;}
+          }
+          &::after{
+            position: absolute;
+            content: "";
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: $main-green;
+            transition: all 0.5s;
+          }
+          &::before{
+            position: absolute;
+            content: "";
+            right: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: $main-green;
+            transition: all 0.5s;
+          }
+        }
+      }
+      .footer_link{
+        flex:1;
+      }
+    }
+  }
+}
+
+.modal_fixed{
+  position: fixed;
+  z-index: 999;
+  left: auto;
+  top: auto;
+  max-width: 350px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  right: 50px;
+  bottom: 40px;
+  background-color: hsla(30, 7%, 94%, 0.5);
+    backdrop-filter: blur(20px) saturate(1.7);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  @include mobile{
+    width: 90%;
+    height: 90%;
+    right: 10px;
+    bottom: 10px;
+  }
+  .modal_container{
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal_header{
+    background-color: #595AFF;
+    backdrop-filter: blur(20px) saturate(1.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    line-height: 1.2;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+
+      .modal_title{
+        display: flex;
+        .avater{
+          margin-right: 15px;
+          img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+        }
+        .header_cont{
+          .header_title{color: #fff;font-weight:700;}
+          .header_subtitle{color: #fff;font-size: 0.9rem;
+            margin-top: 5px;}
+        }
+      }
+
+      .modal_close{
+        border:none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        color: #fff;
+        display: flex;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.3s ease;
+          &:hover{
+            background-color: darken($color: #ffffff50, $amount: 30);
+          }
+      }
+
+    
+  }
+  .modal_inner{
+    width: 100%;
+    position: absolute;
+    top: 74px;
+    overflow-y: scroll;
+    height: 526px;
+    z-index: 999;
+    padding: 10px;
+
+    
+    &::-webkit-scrollbar {
+        width: 14px;
+        background-color: #ececec80;
+      }
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 5px #fff;background: linear-gradient(to top, $main-purple 50%, $main-green 100%);border-radius: 14px;
+      }
+      & .container::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; background: #f1f1f1; border-radius: 14px;
+      }
+
+      .bubble_box{
+        
+        
+        .bubble_text{
+          position: relative;
+          display: inline-block;
+          padding: 16px;
+          border-radius: 16px;
+          background: #fff;
+          color: $main-purple;
+          margin-bottom: 6px;
+          word-break: break-word;
+          box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
+          a{color:#333;
+            font-weight: 700;
+            text-decoration: none;
+            }
+        
+        }
+
+        .bubble_select{
+          position: relative;
+          display: inline-block;
+          padding: 16px;
+          border-radius: 16px;
+          background: $main-purple;
+          box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+          margin-bottom: 6px;
+            &:hover{background-color: lighten($main-purple, 10%);}
+
+            .select_cont{color: #fff;}
+        }
+      }
+
+      .right{
+        text-align: right;
+        margin: 8px 0;
+        
+        
+        .bubble_text{
+          background-color: #94f3d0;
+          color: #000;
+          right: 0;
+          max-width: 250px;
+        }
+      }
+  }
+}
+

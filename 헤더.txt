@@ -1,0 +1,32 @@
+section의 상태를 useState로 관리
+
+처음 로드됐을 때 
+1. section의 각 item 별로 offsetY 값 구해서 업데이트함
+=> offsetY 구하는 함수 setOffsetY
+setOffsetY에선 section의 각 항목을 map으로 돌려서 
+-> 각 id에 속하는 요소 가져옴 -> id 요소의 위치값 구함
+-> item 배열 전체 불러와 offsetY값 업데이트
+
+** rect.top 은 뷰포트 기준으로 얼마나 떨어져있는지만 확인 가능함. 처음 로드했을땐 가장 상단을 기준으로
+얼마나 떨어져있는지 나오지만 스크롤을 하면 뷰포트 기준이 변경되어 정확한 위치값을 구해올 수 없다.
+그래서 sectionScrollTop 값을 따로 구해 (윈도우에서 얼마나 떨어져있는지)
+두개의 값을 더해야 정확한 위치값이 나옴
+
+2. scroll 되면 scroll되고있는 영역의 id값 받아오는 함수 handleSetScrollId 실행
+handleSetScrollId 에서는 scroll 된 값을 가져오고
+section의 각 item을 반복문으로 돌려서 
+스크롤 내린 값이 각 영역의 위치값 (위에서 구한 offsetY) 보다 큰 경우,
+=>scrollId 값을 해당 item의 id 값으로 할당
+
+
+===> 이렇게 구한 scrollId 값을 Header 컴포넌트로 전달해서 조건문으로 클라스 발생시킴
+
+window.scrollY || document.documentElement.scrollTop; 
+window.scrollY -> 문서의 뷰포트에서 수직 스크롤 위치(모던 브라우저에서만)
+document.documentElement.scrollTop;  -> html 요소의 스크롤 위치
+
+둘 다 동일한 값 출력하지만 호환성 고려해서 두가지 조건 다 사용
+오래된 브라우저에서 모던 브라우저 속성 지원 안되는 경우 대비
+
+
+

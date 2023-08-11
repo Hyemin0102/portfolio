@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Made-medium';
+	font-display: swap;
+	src: url('./font/MADE-Outer-Sans-Light-PERSONAL-USE.woff') format('woff')
+}
+@font-face {
+	font-family: 'Made-bold';
+	font-display: swap;
+	src: url('./font/MADE-Outer-Sans-Alt-Bold-PERSONAL-USE.woff') format('woff')
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('./font/Pretendard-Medium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LeeSeoyun';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

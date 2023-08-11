@@ -1,0 +1,19 @@
+<Header>
+     <h2></h2>
+     <Menu>
+           -about / portfolio / skills / contact
+            (클릭하면 해당 컴포넌트 부분으로 넘어가기)
+<Main>
+     대표 문구 3줄
+<About>
+ 
+<Portfolio>
+     <div>
+         <텍스트 - 왼쪽>
+         <이미지 - 오른쪽>
+             <포폴 모음 컴포넌트>
+                  - json 사용해서 li map 으로 만들기?
+     </div>
+<Skills>
+
+<Contact> 

@@ -1,0 +1,16 @@
+$main-purple: #595aff;
+$main-green: rgb(36, 255, 175);
+$main-red: rgb(255, 51, 95);
+$font-Eng:  'Made-medium';
+
+@mixin mobile{
+  @media (max-width: 767px){ 
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (max-width: 1023px){
+    @content;
+  }
+}
