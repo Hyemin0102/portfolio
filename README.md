@@ -1,5 +1,5 @@
-<img width="45%" src="https://github.com/Hyemin0102/portfolio/assets/128768462/7296a23d-de85-4026-891a-d4cc3a6f0a7e"/>
-<img width="45%" src="https://github.com/Hyemin0102/portfolio/assets/128768462/c35f62c0-6c30-4537-84a6-62fd074e4da3"/>
+<img width="45%" src="https://github.com/Hyemin0102/portfolio/assets/128768462/a428f691-217c-4eec-80df-2593cb1a164d"/>
+<img width="45%" src="https://github.com/Hyemin0102/portfolio/assets/128768462/2d1a9667-a925-42cb-815b-544a7a94d989"/>
 
 # Portfolio
 https://frontend-portfolio-hm.netlify.app/
