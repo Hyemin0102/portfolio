@@ -108,7 +108,7 @@
     },
     {
       "id" : 9,
-      "name":"Weahter-API",
+      "name":"Weather-API",
       "description":"fetch를 활용해 weather api를 연동한 위치 별 날씨 정보를 보여주는 토이 프로젝트",
       "detail":"OpenWeatherMap API를 활용해 실시간 날씨 정보를 가져오고, 다른 도시 선택 시 해당 지역의 실시간 날씨 정보를 가져오는 웹페이지 입니다. fetch API를 활용해 비동기적으로 데이터를 가져오고 async/await 구문을 활용하였습니다. react-spinner 라이브러리로 데이터가 로딩중인 상태를 표시하였습니다.",
       "category":"React",
