@@ -53,7 +53,7 @@ const MainText = () => {
           </div>
           <div className='bg_img'>
             <p className='bg_color'></p>
-            <img src="images/main_profile.png" alt="main_car"/>
+            <img src="images/main_profile.webp" alt="main_car"/>
           </div>
       </div>
   )

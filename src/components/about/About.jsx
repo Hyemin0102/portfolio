@@ -27,7 +27,7 @@ const About = () => {
         <div className='about_inner'>
           <div className='about_left'>
             <p>About Me</p>
-            <p><img src="/images/about_img.png" alt="어바웃캐릭터" /></p>
+            <p><img src="/images/about_img.webp" alt="어바웃캐릭터" /></p>
           </div>
           <div className='about_right'>
             <div className='right_wrap'>
