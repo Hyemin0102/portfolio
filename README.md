@@ -23,7 +23,7 @@ React, Framer-motion, styled-components
 <br>
 
 ## 🚩주요 기능 
-* [스크롤 이벤트 (offsetTop계산, framer-motion)](#scroll-event)
+* [스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)](#scroll-event)
 * [다크모드 구현 (Context API, style-components)](#다크모드)
 * contact 채팅창 구현 (질문에 맞는 답변 구현, framer-motion)
 * 프로젝트 리스트 JSON 데이터로 생성
