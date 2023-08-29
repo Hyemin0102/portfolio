@@ -22,6 +22,20 @@ React, Framer-motion, styled-components
 
 <br>
 
+## 🧾목차
+* [주요 기능](#주요-기능)
+  - 스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)
+  - 다크모드 구현 (Context API, style-components)
+  - contact 채팅창 구현(useRef, framer-motion)
+  - 프로젝트 리스트 JSON 데이터로 관리
+* [개선 사항](#개선-사항)
+* [문제 해결](#문제-해결)
+* [프로젝트를 마치며](#프로젝트를-마치며)
+
+<hr>
+
+<br>
+
 ## 🚩주요 기능 
 * [스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)](#scroll-event)
 * [다크모드 구현 (Context API, style-components)](#dark-mode)
@@ -32,9 +46,7 @@ React, Framer-motion, styled-components
 
 ## 🔥코드 리뷰
 
-<br>
-
-## 💻scroll event
+### 💻scroll event
   
   원페이지 형식으로 사이트를 구상하다보니 당연히 스크롤 이벤트가 많이 들어가게 되었습니다. 리액트는 framer-motion이나 intersection-observer 등 다양한 scroll 관련 라이브러리가 사용 가능한데 처음 구현해보는거니까 직접 scroll값을 구해서 기능을 구현해보자, 하고 메인 페이지는 순수 스크립트로 이벤트를 구현했습니다.
 
@@ -105,10 +117,10 @@ useEffect(() => {
 포트폴리오를 만들며 이 스크롤 이벤트를 다루는 부분이 가장 복잡하고 어려웠는데 useEffect와 useCallback 함수를 적절하게 사용하지 않으면 불필요한 렌더링이 너무 많이 되거나 혹은 실시간으로 업데이트가 안되거나 하는 문제점이 발생했습니다.
 
 그래도 라이브러리를 이용하지 않고 코드를 직접 짜면서 스크롤 관련 매서드나 리액트 훅 관련하여 많은 공부가 되었습니다.
-
+<hr>
 <br>
 
-## 💻dark-mode
+### 💻dark-mode
 
 어떤 방식으로 다크모드를 구현할까 고민하다 처음엔 단순히 useContext를 사용해 다크모드 상태를 true, false로 관리하고
   클래스를 다르게 주는 방식을 고안하였습니다.  
@@ -175,10 +187,10 @@ function App() {
 고민했던 부분은 새로고침 시 기본 설정 모드인 라이트모드로 돌아오는데, 이 전에 다크모드를 선택했으면 다크모드로 유지가 될 지 새로고침 시 기본 상태로 돌아올지 였습니다.
 
 여러 페이지가 있었다면 localstorage를 이용해 모드 값을 저장해두었겠지만 원페이지이므로 새로고침 시 기본 라이트 모드로 돌아오도록 구현하되 추후 페이지가 추가 될 경우를 대비해 로컬스토리지 저장 기능도 코딩하였습니다.
-
+<hr>
 <br>
 
-## 💻contact 채팅창 구현
+### 💻contact 채팅창 구현
 조금 더 인터렉션한 웹페이지를 구현하고자 contact 부분을 채팅창 형식으로 만들어 모달 대화 상자를 만들었습니다. 채팅 화면을 스크롤 하기 위해 useRef로 모달 내부의 스크롤 요소를 참조하고, useEffect로 컴포넌트가 렌더링 될 때마다 useRef로 참조한 요소의 가장 아래로 스크롤을 조정했습니다.
 ```javascript
     const scrollRef = useRef(null);
@@ -250,10 +262,10 @@ const containerVariants = {
               return null;
             })}
 ```
-
+<hr>
 <br>
 
-## 💻프로젝트 리스트 JSON 데이터로 관리
+### 💻프로젝트 리스트 JSON 데이터로 관리
 재사용성 향상과 상태관리를 용이하게 하기 위하여 포트폴리오의 프로젝트 리스트는 JSON파일을 따로 만들어 관리하였습니다.
 ```javascript
 {
@@ -338,8 +350,8 @@ const projectList = () => {
     });
   };
 ```
-
-
+<hr>
+<br>
 
 ## 🛠개선 사항
 SPA 특성 상 맨 처음 페이지를 로드할때 웹팩에서 압축한 bundle flie을 다운받게 되는데 이 때 인터넷 환경이 느릴 경우에 전체 다운이 받아지기 전까지 화면을 볼 수 없는 불상사가 발생할 수 있습니다. 그래서 그런 점을 보완하기 위해 성능 최적화를 진행해 보았습니다.
