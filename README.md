@@ -5,8 +5,7 @@
 https://frontend-portfolio-hm.netlify.app/
 
 리액트를 활용하여 프론트엔드 개발자 준비 과정에서 개발한 작품과 해당 작품들의 기능을 설명하는 포트폴리오 웹페이지입니다. 
-
-Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사용자와의 인터랙션을 강조한 동적인 웹페이지를 구현했습니다.
+Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사용자와의 인터랙션을 강조한 동적인 웹페이지를 구현했으며, react-redux 라이브러리로 다크모드를 구현했습니다.
 
 <br>
 
