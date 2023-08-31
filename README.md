@@ -11,7 +11,7 @@ Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사�
 <br>
 
 ## ⚙개발 환경
-React, Framer-motion, styled-components
+React, react-redux, Framer-motion, styled-components
 
 <br>
 
@@ -26,6 +26,7 @@ React, Framer-motion, styled-components
 * [주요 기능](#주요-기능)
   - 스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)
   - 다크모드 구현 (Context API, style-components)
+  - 다크모드 구현 (React-redux, style-components)
   - contact 채팅창 구현(useRef, framer-motion)
   - 프로젝트 리스트 JSON 데이터로 관리
 * [개선 사항](#개선-사항)
