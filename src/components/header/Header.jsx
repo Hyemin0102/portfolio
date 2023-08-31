@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import ModalBox from '../contact/ModalBox';
 import { motion ,AnimatePresence  } from 'framer-motion';
-import { useTheme } from '../../context/ThemeProvider';
 import { HiOutlineLightBulb } from "react-icons/hi";
+import { useDispatch } from 'react-redux';
+import { toggleDarkMode } from '../../redux/theme';
 
 const Header = ({scrollId,section}) => {
+  const dispatch = useDispatch();
+
+  const toggleTheme = () => {
+    dispatch(toggleDarkMode());
+  };
+
   const [modal,setModal] = useState(() => false);
-  const [ThemeMode, toggleTheme] = useTheme();
-  //console.log('ThemeMode header!!!', ThemeMode);
 
 //section 중 클릭 시 보낸 id값과 같은것 찾아서 그것만 targetSection에 넣고 해당 위치로 이동
   const scrollTo =(id)=>{
@@ -23,11 +28,6 @@ const Header = ({scrollId,section}) => {
     setModal(show => !show);
   };
 
-  const txtColor = {
-    color: ThemeMode === 'dark' ? '#ffffff' : 'initial',
-  };
-
-
   return (
     <>
       <header>
@@ -38,12 +38,10 @@ const Header = ({scrollId,section}) => {
             <li onClick={()=>scrollTo('skill')} className={scrollId === 'skill' ? 'scroll_in':''}>Skills</li>
             <li onClick={showModal} className={`contact_box ${modal ? 'contact_box':''}`}>
               Contact</li>
-            <li className="header_theme" onClick={toggleTheme} mode={ThemeMode} style={txtColor}><HiOutlineLightBulb /></li>
+            <li className="header_theme" onClick={toggleTheme}><HiOutlineLightBulb /></li>
           </ul>
         </div>
-        
       </header>
-      
       <AnimatePresence>
     {modal && 
           <motion.div className='modal_fixed' 

@@ -1,13 +1,17 @@
 import React from 'react';
 //import classes from "./MainText.module.css";
 import { HiOutlineLightBulb } from "react-icons/hi";
-import {  useTheme } from '../../context/ThemeProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDarkMode } from '../../redux/theme';
 //import { darkContext, useDarkContext } from '../../store/Context';
 
 const MainText = () => {
-  const [ThemeMode, toggleTheme] = useTheme();
-  //console.log('ThemeMode',ThemeMode)
+  const isDark  = useSelector(state=>state.darkmode).isDark;
+  const dispatch = useDispatch();
 
+  const toggleTheme = () =>{
+    dispatch(toggleDarkMode());
+  };
 
   return (
       <div id="mainText" className='main_wrapper'>
@@ -27,9 +31,9 @@ const MainText = () => {
               <h1>
               <span>F</span>
               <span>R</span>
-              <span className='circle' onClick={toggleTheme} mode={ThemeMode} >
+              <span className='circle' onClick={toggleTheme}>
                 <HiOutlineLightBulb className='main_icon'/>
-                {ThemeMode === 'light'?  <span className='theme_txt' style={{'fontWeight':'bold'}}>Turn Off !</span>  :  <span className='theme_txt'>Turn On !</span> } 
+                {!isDark ?  <span className='theme_txt' style={{'fontWeight':'bold'}}>Turn Off !</span>  :  <span className='theme_txt'>Turn On !</span> } 
               </span>
               <span>N</span>
               <span>T</span>

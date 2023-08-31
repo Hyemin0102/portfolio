@@ -58,11 +58,23 @@ const Main = () => {
 useEffect(() => {
   setOffsetY();
   handleSetScrollId(); // 초기 스크롤 ID 설정
+
+  const handleScroll = () => {
+    handleSetScrollId();
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  //clean-up
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+
   // eslint-disable-next-line
 }, [handleSetScrollId]);
 
 
-useEffect(() => {
+/* useEffect(() => {
   const handleScroll = () => {
     handleSetScrollId();
   };
@@ -71,7 +83,7 @@ useEffect(() => {
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
-}, [handleSetScrollId]);//handleSetScrollId
+}, [handleSetScrollId]);//handleSetScrollId */
 
 
 //새로고침 시 화면 가장 위로 이동

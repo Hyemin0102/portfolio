@@ -1,17 +1,17 @@
+import { useSelector } from "react-redux";
 import "./App.css";
 import Main from "./components/Main";
 import { GlobalStyle } from './theme/GlobalStyle';
-import ThemeProvider from './context/ThemeProvider';
 
 
 function App() {
+  const isDark  = useSelector(state=>state.darkmode).isDark;
+
   return (
-      <ThemeProvider>
-        <GlobalStyle />
-        <div>
-          <Main />
-        </div>
-      </ThemeProvider>
+    <>
+      <GlobalStyle isDark={isDark}/>
+      <Main />
+    </>
   );
 }
 
