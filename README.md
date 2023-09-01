@@ -19,8 +19,8 @@ Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사�
   - contact 채팅창 구현(useRef, framer-motion)
   - 프로젝트 리스트 JSON 데이터 관리
 * [🛠개선 사항](#개선-사항)
-  - [성능 최적화](#성능-최적화)
-  - [redux 적용](#redux-적용)
+  - 성능 최적화
+  - redux 적용
 * [💡문제 해결](#문제-해결)
 * [😊프로젝트를 마치며](#프로젝트를-마치며)
 
