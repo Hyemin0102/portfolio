@@ -9,32 +9,39 @@ Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사�
 
 <br>
 
+## 🧾목차
+* [⚙개발 환경](#개발-환경)
+* [🙄Concept Point](#concept-point)
+* [⏱개발 기간](#개발-기간)
+* [🚩주요 기능](#주요-기능)
+  - 스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)
+  - 다크모드 구현 (Context API, style-components)
+  - 다크모드 구현 (React-redux, style-components)
+  - contact 채팅창 구현(useRef, framer-motion)
+  - 프로젝트 리스트 JSON 데이터 관리
+* [🛠개선 사항](#개선-사항)
+* [💡문제 해결](#문제-해결)
+* [😊프로젝트를 마치며](#프로젝트를-마치며)
+
+<br>
+<hr>
+
 ## ⚙개발 환경
 React, react-redux, Framer-motion, styled-components
 
 <br>
+<hr>
 
-## 🙄Concept Point
+## ⏱개발 기간
+2023.06 ~ 2023.07
+
+## 🙄concept point
 * 가독성, 편리성
 * 텍스트, 라인, 단순 도형
 * 컬러 포인트(main color 3가지)
 
 <br>
-
-## 🧾목차
-* [주요 기능](#주요-기능)
-  - 스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)
-  - 다크모드 구현 (Context API, style-components)
-  - 다크모드 구현 (React-redux, style-components)
-  - contact 채팅창 구현(useRef, framer-motion)
-  - 프로젝트 리스트 JSON 데이터로 관리
-* [개선 사항](#개선-사항)
-* [문제 해결](#문제-해결)
-* [프로젝트를 마치며](#프로젝트를-마치며)
-
 <hr>
-
-<br>
 
 ## 🚩주요 기능 
 * [스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)](#scroll-event)
@@ -48,7 +55,7 @@ React, react-redux, Framer-motion, styled-components
 
 ### 💻scroll event
   
-  원페이지 형식으로 사이트를 구상하다보니 당연히 스크롤 이벤트가 많이 들어가게 되었습니다. 리액트는 framer-motion이나 intersection-observer 등 다양한 scroll 관련 라이브러리가 사용 가능한데 처음 구현해보는거니까 직접 scroll값을 구해서 기능을 구현해보자, 하고 메인 페이지는 순수 스크립트로 이벤트를 구현했습니다.
+원페이지 형식으로 사이트를 구상하다보니 당연히 스크롤 이벤트가 많이 들어가게 되었습니다. 리액트는 framer-motion이나 intersection-observer 등 다양한 scroll 관련 라이브러리가 사용 가능한데 처음 구현해보는거니까 직접 scroll값을 구해서 기능을 구현해보자, 하고 메인 페이지는 순수 스크립트로 이벤트를 구현했습니다.
 
 우선 useState훅으로 각 section의 offSetY값과 현재 화면에서 보여지는 section의 id를 관리합니다.
 
