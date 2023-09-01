@@ -16,7 +16,6 @@ Framer Motion과 Styled Components 라이브러리를 적극 활용하여, 사�
 * [🚩주요 기능](#주요-기능)
   - 스크롤 이벤트 (useEffect, useCallback, offsetTop계산, framer-motion)
   - 다크모드 구현 (Context API, style-components)
-  - 다크모드 구현 (React-redux, style-components)
   - contact 채팅창 구현(useRef, framer-motion)
   - 프로젝트 리스트 JSON 데이터 관리
 * [🛠개선 사항](#개선-사항)
@@ -361,15 +360,19 @@ const projectList = () => {
 <br>
 
 ## 🛠개선 사항
+### 1. 성능 최저적화
 SPA 특성 상 맨 처음 페이지를 로드할때 웹팩에서 압축한 bundle flie을 다운받게 되는데 이 때 인터넷 환경이 느릴 경우에 전체 다운이 받아지기 전까지 화면을 볼 수 없는 불상사가 발생할 수 있습니다. 그래서 그런 점을 보완하기 위해 성능 최적화를 진행해 보았습니다.
-
 포트폴리오 페이지를 만들었기때문에 텍스트나 페이지는 많이 없지만 목업이나 프로젝트 이미지 등, 이미지가 많이 사용되었는데 고화질 이미지를 사용한다고 꽤 큰 이미지를 가져와서 여기서 로딩이 느려지는 것 같았습니다.
-
 이에 이미 성능 최적화 진행하기 전 이미지 사이즈를 줄여서 조금 빨라지긴 했지만 여전히 살짝 버벅 거리는 부분이 발생했습니다.
+<br>
+
+### 2. redux 적용
+기존에는 Context API를 활용해 전역적으로 상태 관리를 했습니다. 현재 프로젝트는 상태 값이 많거나 로직이 복잡하지 않아 Context API로도 충분히 상태관리를 할 수 있었지만, 앞으로 더 규모가 큰 프로젝트를 진행 할 때 더 향상된 성능과 미들웨어 기능, 코드의 유지보수성을 높이기 위한 방안으로 redux를 적용해보고자 합니다. 또 context API 사용 시 context가 지니고 있는 상태가 바뀌면 Provider 내부의 모든 컴포넌트들이 리렌더링 되는데, 이 점이 비효율적이라고 생각되었습니다. 이런 점을 redux를 사용 시 useSelector 함수 내부의 상태가 바뀔 때만 적용되어 보완할 수 있었습니다.
 
 <br>
 
 ## 💡문제 해결
+### 1. 성능 최저적화
 우선, 정확하게 수치로 비교를 해보기 위해 Lighthouse에서 성능 검사를 해보았습니다.
 
 <img src="https://github.com/Hyemin0102/portfolio/assets/128768462/7066ce9e-3db0-4d57-82e2-ab463bfdfd4b">
@@ -386,6 +389,66 @@ Image formats like WebP and AVIF often provide better compression than PNG or JP
 <img src="https://github.com/Hyemin0102/portfolio/assets/128768462/ad6c51c7-bd14-491d-b90c-3bb61545310f">
 
 <br>
+
+### 2. redux 적용
+기존에 사용했던 context API를 아예 제거하고 redux 라이브러리를 적용하였습니다. redux를 위한 폴더를 따로 만들어 redux관련 함수를 모두 정의하였습니다.
+(참고, redux 버전이 4.2로 올라가면서 기존 액션 스토어를 생성하기 위해 사용하던 createStore가 deprecated 되었습니다. 이에 redut toolkit의 configureStore로 대체하는 것을 권장하고 있어 toolkit을 설치해 사용하였습니다. 또 createSlice라는 내부 함수를 사용해 액션 생성 함수와 리듀서를 한번에 정의하였습니다.) 
+```javascript
+const darkModeSlice = createSlice({
+  name: "darkmode",
+  initialState:{
+    isDark: false,
+  },
+  reducers:{
+    toggleDarkMode:(state)=>{
+      state.isDark = !state.isDark;
+    }
+  }
+});
+
+
+export const {toggleDarkMode} = darkModeSlice.actions;
+
+export const store = configureStore({
+  reducer:{
+    darkmode: darkModeSlice.reducer,
+  }
+})
+```
+현재 다크모드인지 확인하고, 초기 값은 false로 설정했습니다. 또 리듀서로 토글 함수를 정의해 버튼 클릭 시 다크모드 불리언값이 반대되도록 설정했습니다.
+
+그리고 가장 상위 컴포넌트인 App.js에 useSelector로 초기 상태값을 등록하고 GlobalStyle 컴포넌트로 전달합니다.
+```javascript
+function App() {
+  const isDark  = useSelector(state=>state.darkmode).isDark;
+
+  return (
+    <>
+      <GlobalStyle isDark={isDark}/>
+      <Main />
+    </>
+  );
+}
+```
+GlobalStyle에 styled-component를 활용해 isDark가 true/false인지에 따라 변경되는 스타일링을 정의해 줍니다. -> 기존 Context API사용과 동일
+
+그리고 테마를 변환할 컴포넌트에서 useDispatch로 액션을 발생시켜 상태값을 변경해줍니다.
+```javascript
+const Header = ({scrollId,section}) => {
+  const dispatch = useDispatch();
+
+  const toggleTheme = () => {
+    dispatch(toggleDarkMode());
+  };
+//...생략
+ <li className="header_theme" onClick={toggleTheme}><HiOutlineLightBulb /></li>
+```
+이렇게 redux로 다크모드를 구현 후 Lighthouse 성능 확인을 해보니 기존보다 향상된 것으로 확인됩니다. 앞서 말했던 context API사용 시 Provider 내부 모든 상태가 리렌더링되는 점이 보완된 결과인 것 같습니다.
+
+<img src="https://github.com/Hyemin0102/portfolio/assets/128768462/0632b8bd-9826-41e7-84b6-ea7be0a23bc3">
+
+<br>
+<hr>
 
 ## 😊프로젝트를 마치며
 리액트를 사용해 포트폴리오를 제작하면서 이론으로 배웠던 다양한 훅을 직접 사용해보며 실전 공부가 많이 되어 뿌듯합니다. 그리고 사용해보니 리액트에 엄청난 매력과 편리성을 느꼈습니다. 컴포넌트 기반으로 페이지를 만들면 왜 유지보수가 편리하고 또 가상DOM을 통해 어떻게 성능이 좋아지는지, 몸소 느낄 수 있는 프로젝트 제작이었습니다. 또 다양하고 편리한 라이브러리나 프레임워크와 호환이 잘 된다는 점도 엄청난 매리트인 것 같습니다. 이런 점 역시 직접 framer-motion, style-components 같은 라이브러리릉 사용해 프로젝트를 제작하며 관련해 느낄 수 있었고, 앞으로 더 능숙하게 활용하기 위하여 많은 프로젝트를 만들며 엽습해야겠습니다. 또 navbar에서 메뉴 클릭 시 route를 사용해 페이지가 넘어가는 것처럼 보이도록 구현하면 어땠을까하는 호기심도 생깁니다. 다음 리액트 프로젝트는 spa 특성에 더 맞게 route를 활용해 여러 페이지로 되어있는 프로젝트를 진행해 봐야겠습니다. 
