@@ -97,7 +97,7 @@ const ModalBox = ({showModal}) => {
                 <div className='select_cont'>혜민님이 추구하는 개발자로서의 가치관이 무엇인가요?</div>
               </div>
               <div className='bubble_select' onClick={()=>showAnswer('04')}>
-                <div className='select_cont'>혜민님의 요즘 흥미있는 기술은 어떤것인가요?</div>
+                <div className='select_cont'>혜민님은 요즘 어떤 기술에 흥미가 있나요?</div>
               </div>
             </div>
             {selectedAnswers.map((answer,index)=>{
