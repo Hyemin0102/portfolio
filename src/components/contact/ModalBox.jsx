@@ -91,13 +91,13 @@ const ModalBox = ({showModal}) => {
                 <div className='select_cont'>인사하고 싶어요!</div>
               </div>
               <div className='bubble_select' onClick={()=>showAnswer('02')}>
-                <div className='select_cont'>혜민님의 요즘 관심사는 무엇인가요?</div>
+                <div className='select_cont'>혜민님이 개발자가 되고 싶은 이유는 무엇인가요?</div>
               </div>
               <div className='bubble_select' onClick={()=>showAnswer('03')}>
-                <div className='select_cont'>혜민님의 다른 프로젝트는 어디서 볼 수 있나요?</div>
+                <div className='select_cont'>혜민님이 추구하는 개발자로서의 가치관이 무엇인가요?</div>
               </div>
               <div className='bubble_select' onClick={()=>showAnswer('04')}>
-                <div className='select_cont'>혜민님과 함께 일하고 싶어요!</div>
+                <div className='select_cont'>혜민님의 요즘 흥미있는 기술은 어떤것인가요?</div>
               </div>
             </div>
             {selectedAnswers.map((answer,index)=>{

@@ -24,15 +24,15 @@ const Skill = () => {
             <p className='skill_name'>Language</p>
             <div className="skill_item_wrap">
               <div className='skill_item'>
-                <img  height="50" width="50" src="https://cdn.simpleicons.org/HTML5/FF335F" alt="HTML5"/>
+                <img  height="40" width="40" src="https://cdn.simpleicons.org/HTML5/FF335F" alt="HTML5"/>
                 <span>HTML5</span>
               </div>
               <div className='skill_item'>
-              <img height="50" width="50" src="https://cdn.simpleicons.org/CSS3/FF335F"  alt="CSS3"/>
+              <img height="40" width="40" src="https://cdn.simpleicons.org/CSS3/FF335F"  alt="CSS3"/>
                 <span>CSS3</span>
               </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/javascript/FF335F"  alt="javascript" />
+                <img height="40" width="40" src="https://cdn.simpleicons.org/javascript/FF335F"  alt="javascript" />
                 <span>Javascript</span>
               </div>
             </div>
@@ -41,15 +41,27 @@ const Skill = () => {
             <p className='skill_name'>FrameWork/Library</p>
             <div className="skill_item_wrap">
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/react/FF335F"  alt="react"/>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/react/FF335F"  alt="react"/>
                 <span>React</span>
               </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/vuedotjs/FF335F" alt="vue.js" />
+                <img height="40" width="40" src="https://cdn.simpleicons.org/vuedotjs/FF335F" alt="vue.js" />
                 <span>Vue</span>
               </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/sass/FF335F"  alt="sass"/>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/styledcomponents/FF335F"  alt="styled-components"/>
+                <span>Styled-components</span>
+              </div>
+              <div className='skill_item'>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/tailwindcss/FF335F"  alt="tailwindcss"/>
+                <span>Tailwind CSS</span>
+              </div>
+              <div className='skill_item'>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/bootstrap/FF335F"  alt="bootstrap"/>
+                <span>Bootstrap</span>
+              </div>
+              <div className='skill_item'>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/sass/FF335F"  alt="sass"/>
                 <span>Sass</span>
               </div>
             </div>
@@ -57,20 +69,24 @@ const Skill = () => {
           <div className='skill_tool'>
             <p className='skill_name'>Tool</p>
             <div className="skill_item_wrap">
+            <div className='skill_item'>
+                <img height="40" width="40" src="https://cdn.simpleicons.org/firebase/FF335F" alt="firebase" />
+                <span>Firebase</span>
+              </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/GitHub/FF335F" alt="git" />
+                <img height="40" width="40" src="https://cdn.simpleicons.org/GitHub/FF335F" alt="git" />
                 <span>Git</span>
               </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/notion/FF335F" alt="notion" />
+                <img height="40" width="40" src="https://cdn.simpleicons.org/notion/FF335F" alt="notion" />
                 <span>Notion</span>
               </div>
               <div className='skill_item'>
-              <img height="50" width="50" src="https://cdn.simpleicons.org/figma/FF335F" alt="figma" />
+              <img height="40" width="40" src="https://cdn.simpleicons.org/figma/FF335F" alt="figma" />
                 <span>Figma</span>
               </div>
               <div className='skill_item'>
-                <img height="50" width="50" src="https://cdn.simpleicons.org/adobephotoshop/FF335F" alt="adobephotoshop" />
+                <img height="40" width="40" src="https://cdn.simpleicons.org/adobephotoshop/FF335F" alt="adobephotoshop" />
                 <span>Adobe Photoshop</span>
               </div>
             </div>

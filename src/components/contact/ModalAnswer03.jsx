@@ -15,7 +15,7 @@ const ModalAnswer03 = ({variants,controls,bubble}) => {
       <motion.div 
         className='bubble_text'
         variants={bubble}>
-        혜민님의 다른 기록이나 프로젝트는 어디서 볼 수 있나요?
+        혜민님이 추구하는 개발자로서의 가치관이 무엇인가요?
       </motion.div>
     </div>
     <div className='bubble_box'>
@@ -23,7 +23,7 @@ const ModalAnswer03 = ({variants,controls,bubble}) => {
             className='bubble_text'
             variants={bubble}
             >
-            저의 프로젝트가 궁금하시다면, Github와 Notion으로 놀러오세요!
+            저는 세상에 이로움을 주는 기술을 개발하고 싶습니다.
           </motion.div>
         </div>
         <div className='bubble_box'>
@@ -31,8 +31,7 @@ const ModalAnswer03 = ({variants,controls,bubble}) => {
             className='bubble_text'
             variants={bubble}
             >
-          <a href="https://github.com/Hyemin0102/" target='blank' rel="noopener noreferrer">
-          👉 혜민의 Github 놀러가기</a>
+            거창한 것이 아니라 내가 만든 기술로 누군가 한명이라도 도움이 된다면 그것이 이로운 기술이라고 생각합니다.
           </motion.div>
         </div>
         <div className='bubble_box'>
@@ -40,8 +39,7 @@ const ModalAnswer03 = ({variants,controls,bubble}) => {
             className='bubble_text'
             variants={bubble}
             >
-            <a href="https://amenable-shelf-49d.notion.site/98c800db253143adbff133b35cf06aca" target='blank' rel="noopener noreferrer">
-            👉 혜민의 Notion 놀러가기</a>
+            그런 신념으로 사용자 중심의 서비스를 개발하고 싶습니다!💪
           </motion.div>
         </div>
         <div className='bubble_box'>
