@@ -53,9 +53,9 @@ header {
             color:#000;
             font-weight: 700;
             background-color: #595AFF60;
-            backdrop-filter: blur(20px) saturate(1.7);
             border-radius: 999px;
             overflow: hidden;
+            background-color: rgba(174,213,200);
           }
           
     }
@@ -63,7 +63,6 @@ header {
 }
 .scroll_menu {
     background-color: hsla(159, 32%, 76%, 0.7);
-    backdrop-filter: saturate(1.7);
     border-radius: 50px;
     gap: 3rem;
     color: gray;
