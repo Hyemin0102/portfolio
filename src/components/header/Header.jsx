@@ -4,6 +4,7 @@ import { motion ,AnimatePresence  } from 'framer-motion';
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { useDispatch } from 'react-redux';
 import { toggleDarkMode } from '../../redux/theme';
+import { darkTheme, lightTheme } from '../../theme/Theme';
 
 const Header = ({scrollId,section}) => {
   const dispatch = useDispatch();
