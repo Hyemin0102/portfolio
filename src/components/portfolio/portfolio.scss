@@ -57,8 +57,9 @@
                   transform: rotate(220deg);
                 }
                 .scrollbar.sect01{transform: rotate(220deg);}
-                .scrollbar.sect02{transform: rotate(280deg); }
-                .scrollbar.sect03{transform: rotate(340deg); }
+                .scrollbar.sect02{transform: rotate(270deg); }
+                .scrollbar.sect03{transform: rotate(310deg); }
+                .scrollbar.sect04{transform: rotate(340deg); }
 
                 .overlay{
                   position: absolute;
@@ -236,6 +237,7 @@
             .border-java{border: 2px solid #F7DF1E; }
             .border-react{border: 2px solid #61DAFB;}
             .border-vue{border: 2px solid #4FC08D;}
+            .border-ts{border: 2px solid #3178C6;}
           }
         }
         .portfolio_img_wrap{

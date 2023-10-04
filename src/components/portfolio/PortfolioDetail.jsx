@@ -30,6 +30,8 @@ const PortfolioDetail = ({projectArr}) => {
       return 'border-react';
     }else if(category === 'Vue'){
       return 'border-vue';
+    }else if(category === 'TypeScript'){
+      return 'border-ts';
     }
   }
 

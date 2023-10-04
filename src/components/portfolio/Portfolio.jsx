@@ -5,8 +5,6 @@ import project from './project.json';
 import { motion } from "framer-motion"; 
 
 const Portfolio = () => {
-  
-
   const projectJson = project.projects;
   
   const [selectedCategory, setSelsectedCategory] =  useState('');
@@ -18,11 +16,21 @@ const Portfolio = () => {
 
       const currentLi = portfolioLiArray.find((item)=>{ //li 배열 중 현재 스크롤 영역 찾아냄
         const rect = item.getBoundingClientRect();
-        return (
-          rect.top < window.innerHeight / 2 &&
-          rect.bottom > window.innerHeight /2
-          )
+        console.log(rect.top,'top!!!!');
+        console.log('selectedCategory!!!',selectedCategory)
+        if(selectedCategory === 'Vue' || selectedCategory === 'TypeScript'){
+          return (
+            rect.top < window.innerHeight / 4 &&
+            rect.bottom > window.innerHeight / 4
+            )
+        } else {
+          return (
+            rect.top < window.innerHeight / 2 &&
+            rect.bottom > window.innerHeight /2
+            )
+        }
       });
+      
       if(currentLi){
         const category = currentLi.querySelector('div.category');
         //console.log('category',category)

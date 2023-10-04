@@ -5,9 +5,17 @@ const PortfolioTitle = ({selectedCategory,scrollTosect}) => {
   //selsectedCategory 가져와서 조건문으로 클라스 지정
   
   const scrollStyle = useMemo(() => {
-    return `scrollbar ${selectedCategory === 'React' ? 'sect02' : (selectedCategory === 'Vue' ? 'sect03' : '')}`;
+    let categoryClass = '';
+    if(selectedCategory === 'React'){
+      categoryClass = 'sect02';
+    } else if(selectedCategory === 'Vue'){
+      categoryClass = 'sect03';
+    }else if(selectedCategory === 'TypeScript'){
+      categoryClass = 'sect04';
+    }
+    return `scrollbar ${categoryClass}`;
   }, [selectedCategory]);
-  //console.log('selectedCategory',selectedCategory)
+  console.log('selectedCategory',selectedCategory)
 
   //console.log(project.projects)
   return (
@@ -33,6 +41,10 @@ const PortfolioTitle = ({selectedCategory,scrollTosect}) => {
             <li onClick={()=>scrollTosect('Vue')} className={selectedCategory === 'Vue' ? 'active':''}>
               <span className='title_line'></span>
               <span>Vue</span>
+            </li>
+            <li onClick={()=>scrollTosect('TypeScript')} className={selectedCategory === 'TypeScript' ? 'active':''}>
+              <span className='title_line'></span>
+              <span>TypeScript</span>
             </li>
           </ul>
         </nav>
