@@ -374,7 +374,7 @@ SPA 특성 상 맨 처음 페이지를 로드할때 웹팩에서 압축한 bundl
 <br>
 
 ## 💡문제 해결
-### 1. 성능 최저적화
+### 1. 성능 최적화
 우선, 정확하게 수치로 비교를 해보기 위해 Lighthouse에서 성능 검사를 해보았습니다.
 
 <img src="https://github.com/Hyemin0102/portfolio/assets/128768462/7066ce9e-3db0-4d57-82e2-ab463bfdfd4b">
