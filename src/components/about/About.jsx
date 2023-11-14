@@ -11,7 +11,6 @@ const About = () => {
     setModal(show => !show);
   }
 
-
   return (
       <motion.div id='about' className='about_wrapper'
         initial={{opacity:0, y:100}}
